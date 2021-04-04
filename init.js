@@ -10,11 +10,17 @@ const myDatePicker2 = MCDatepicker.create({
       dateFormat: 'YYYY-MM-DD',
 })
 
-
-
+if($('#div_loss').height()==0){
+    $('#loss_row').hide();
+  }
+  
+  
 if($('#div_output').height()==0){
     $('#graphAlt').show();  
   }
+
+$('#tableAlt').show();
+$('#simulation_table').hide();
 
 function formatDate(date)
 {
@@ -871,6 +877,9 @@ $('#trainbutton').click(function(){
             type: 'line'
           }]
         };
+        $("#loss_row").attr("style", "height:300px");
+        $("#div_loss").css({"height":"250px", "margin": "50px 80px 0 0"});
+        $("#log").css({"height":"150px", "overflow":"auto", "margin": "80px auto 0"});
         var chart_line = echarts.init(document.getElementById('div_loss'));
         chart_line.setOption(option,true);
         if (i < (epoch-1)) {
@@ -881,6 +890,8 @@ $('#trainbutton').click(function(){
       }(0));
     }
     async_training_loop(function() {
+      $('#simulation_table').show();
+      $('#tableAlt').hide();
       $('#log').append('Done training!');
       my_investment = simple_investor(close,predicted_val,parseInt($('#history').val()),
       parseFloat($('#initialmoney').val()),parseInt($('#maxbuy').val()),parseInt($('#maxsell').val()),new_date)
