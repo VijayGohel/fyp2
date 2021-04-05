@@ -22,6 +22,9 @@
   padding-top: 110px;
 }
 
+.spinner-layer {
+        border-color: #ecf0f1;
+    }
 
 @media (max-width: 600px) {
   .main-header {
