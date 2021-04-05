@@ -534,7 +534,7 @@ function simple_investor(real_signal,predicted_signal,delay,initial_money,max_bu
       else gains = buy_units*predicted_signal[i]
       initial_money -= gains
       current_inventory += buy_units
-      outputs.push("<tr><td>"+dates[i]+"</td><td>buy "+buy_units+" units</td><td>"+gains+"</td><td>"+initial_money+"</td></tr>")
+      outputs.push("<tr><td>"+dates[i]+"</td><td>buy "+buy_units+" units</td><td>"+gains.toFixed(2)+"</td><td>"+initial_money.toFixed(2)+"</td></tr>")
       // <td>NULL</td>
       states_buy_X.push(dates[i])
       states_buy_index.push(i)
@@ -576,7 +576,7 @@ function simple_investor(real_signal,predicted_signal,delay,initial_money,max_bu
             else invest = ((predicted_signal[i] - predicted_signal[states_buy_index[states_buy_index.length-1]]) / predicted_signal[states_buy_index[states_buy_index.length-1]]) * 100
           }
           catch(err) {invest = 0}
-          outputs.push("<tr><td>"+dates[i]+"</td><td>sell "+sell_units+" units</td><td>"+total_sell+"</td><td>"+initial_money+"</td></tr>")
+          outputs.push("<tr><td>"+dates[i]+"</td><td>sell "+sell_units+" units</td><td>"+total_sell.toFixed(2)+"</td><td>"+initial_money.toFixed(2)+"</td></tr>")
           // <td>"+invest+"%</td>
         }
         current_decision = 0
@@ -588,6 +588,6 @@ function simple_investor(real_signal,predicted_signal,delay,initial_money,max_bu
     current_val = predicted_signal[i]
   }
   invest = ((initial_money - starting_money) / starting_money) * 100
-  return {'overall gain':(initial_money-starting_money),'overall investment':invest,
+  return {'overall gain':(initial_money-starting_money).toFixed(2),'overall investment':invest.toFixed(2),
   'sell_Y':states_sell_Y,'sell_X':states_sell_X,'buy_Y':states_buy_Y,'buy_X':states_buy_X,'output':outputs}
 }

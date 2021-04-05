@@ -321,12 +321,34 @@
         </div>
         </div>
 
-        <div class="row center">
-        <div class="input-field col s12 m1 left" style="margin-top:5px; width:160px; display: inline-block;">
-            <button id="trainbutton" class="waves-effect waves-light btn ">Train</button>
+
+        <div class="row" id="trainerror" style="margin:0;display: none">
+        	<div><p>No data available for training</p></div>
         </div>
+
+        <div class="row center">
+
         
-          <div class="input-field col s12 m1 left" style="margin-top:5px; width:160px">
+        
+        <div class="input-field col s12 m3 l3 left" style="margin-top:5px; width:160px;">
+            <button id="trainbutton" class="waves-effect waves-light btn ">Train</button>
+
+            <div class="preloader-wrapper small active center" id="trainpreloader" style="display: none;">
+          <div class="spinner-layer spinner-green-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        
+        
+          <div class="input-field col s12 m3 l3 left" style="margin-top:5px; width:160px">
             <button id="suggestbutton" class="waves-effect waves-light btn">Suggest</button>
           </div>
         

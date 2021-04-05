@@ -546,6 +546,14 @@ $('#suggestbutton').click(function(){
 })
 $('#suggestbutton').click()
 $('#trainbutton').click(function(){
+
+  if($('#div_output').height()==0){
+    $('#trainerror').show();
+    return;  
+  }
+  $('#trainerror').hide();
+  $('#trainbutton').hide();
+  $('#trainpreloader').show();
   $('#log').html('');
   $('#log-invest').html('');
   $('.close-first').css('display','block');
@@ -892,6 +900,8 @@ $('#trainbutton').click(function(){
     async_training_loop(function() {
       $('#simulation_table').show();
       $('#tableAlt').hide();
+      $('#trainbutton').show();
+      $('#trainpreloader').hide();
       $('#log').append('Done training!');
       my_investment = simple_investor(close,predicted_val,parseInt($('#history').val()),
       parseFloat($('#initialmoney').val()),parseInt($('#maxbuy').val()),parseInt($('#maxsell').val()),new_date)
