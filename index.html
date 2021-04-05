@@ -176,12 +176,13 @@
         
         <div style="display: none;" id="invalidOpt"><p>Please choose valid options</p></div>
       
-      <div class="col s12">
+      <div class="row">
+      <div class="col s12 l3 m3 left">
         <button class="waves-effect waves-light btn" id="btn_fetch_data" onclick="onClickFetchData()"
         >Fetch Data</button>
         <!-- <div class="spinner-border" id="load_fetch_data" style="display:none"></div> -->
 
-        <div class="preloader-wrapper small active" id="load_fetch_data" style="display:none ;">
+        <div class="preloader-wrapper small active center" id="load_fetch_data" style="display:none ;">
           <div class="spinner-layer spinner-green-only">
             <div class="circle-clipper left">
               <div class="circle"></div>
@@ -192,7 +193,7 @@
             </div>
           </div>
         </div>
-
+        </div>
       </div>
       <!-- style="margin-top:5px; width:160px"  2ndvid  pointer;" -->
       <!-- <div class="file-field input-field col s12 m1" style="margin-bottom: 5px; width:160px; position: absolute; bottom: 10px; left: 0"> 
@@ -227,7 +228,7 @@
 
           <p class="flow-text" id="graphAlt" style="display: none;">Please select csv file or fetch data from API</p>
         </div>
-    </div>
+    	</div>
 
       <div class="row">
     
@@ -259,38 +260,38 @@
 
       <div class="row">
           
-          <div class="input-field col s12 m3 l3">
+          <div class="input-field col s6 m3 l3">
             <input id="learningrate" type="number" placeholder="Eg: 0.001" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="learning rate during training">
             <label class="active">Learning rate</label>
           </div>
-          <div class="input-field col s12 m3 l3">
+          <div class="input-field col s6 m3 l3">
             <input id="inputdropoutrate" type="number" placeholder="Eg: 0.9" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="dropout rate for LSTM input">
             <label class="active">Input dropout rate</label>
           </div>
-          <div class="input-field col s12 m3 l3">
+          <div class="input-field col s6 m3 l3">
             <input id="outputdropoutrate" type="number" placeholder="Eg: 0.9" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="dropout rate for LSTM output">
             <label class="active">Output dropout rate</label>
           </div>
-          <div class="input-field col s12 m3 l3">
+          <div class="input-field col s6 m3 l3">
             <input id="timestamp" type="number" class="validate tooltipped" placeholder="Eg: 5" data-position="bottom" data-delay="50" data-tooltip="Trends for every minibatch">
             <label class="active">Timestamp per training</label>
           </div>
         </div>
         <div class="row">
 
-          <div class="input-field col s12 m3 l3">
+          <div class="input-field col s6 m3 l3">
             <input id="sizelayer" type="number" class="validate tooltipped" placeholder="Eg: 64" data-position="bottom" data-delay="50" data-tooltip="LSTM size">
             <label class="active">Size layer</label>
           </div>
-          <div class="input-field col s12 m3 l3">
+          <div class="input-field col s6 m3 l3">
             <input id="epoch" type="number" class="validate tooltipped" placeholder="Eg: 10" data-position="bottom" data-delay="50" data-tooltip="Total epoch">
             <label class="active">Training Iteration</label>
           </div>
-          <div class="input-field col s12 m3 l3">
+          <div class="input-field col s6 m3 l3">
             <input id="future" type="number" class="validate tooltipped" placeholder="Eg: 10" data-position="bottom" data-delay="50" data-tooltip="number of days forecast">
             <label class="active">Future days to forecast</label>
           </div>
-          <div class="input-field col s12 m3 l3">
+          <div class="input-field col s6 m3 l3">
             <input id="smooth" type="number" class="validate tooltipped" placeholder="Eg: 10" data-position="bottom" data-delay="50" data-tooltip="Rate anchor smoothing for trends">
             <label class="active">Smoothing weights</label>
           </div>
@@ -304,20 +305,20 @@
             Buying & Selling simulation
           </div>
 
-          <div class="col s12 m9 l9">
-          <div class="input-field col s12 m3 l3">
+          <div class="col s12 m9 l9" style="padding: 0">
+          <div class="input-field col s6 m3 l3">
             <input id="initialmoney" type="number" placeholder="Eg: 10000" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="Money in for simulation">
             <label class="active">Initial money(usd)</label>
           </div>
-          <div class="input-field col s12 m3 l3">
+          <div class="input-field col s6 m3 l3">
             <input id="maxbuy" type="number" placeholder="Eg: 5" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="Max unit to buy">
             <label class="active">Max buy(unit)</label>
           </div>
-          <div class="input-field col s12 m3 l3">
+          <div class="input-field col s6 m3 l3">
             <input id="maxsell" type="number" class="validate tooltipped" placeholder="Eg: 10" data-position="bottom" data-delay="50" data-tooltip="Max unit to sell">
             <label class="active">Max sell(unit)</label>
           </div>
-          <div class="input-field col s12 m3 l3">
+          <div class="input-field col s6 m3 l3">
             <input id="history" type="number" class="validate tooltipped" placeholder="Eg: 5" data-position="bottom" data-delay="50" data-tooltip="MA to compare of">
             <label class="active">Historical rolling</label>
           </div>
@@ -468,7 +469,7 @@
           }
         },
         {
-          selector: '.navbar-fixed', offset: 1500, callback: function () {
+          selector: '.navbar-fixed', offset: 1200, callback: function () {
             $('nav').removeClass('transparent');
             $('nav').addClass('blue-grey darken-3');
           }
